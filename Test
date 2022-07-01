@@ -1,0 +1,14 @@
+while wait() do
+  if getgenv().Toggle == true then
+      for _, v in pairs(game:GetService("Workspace").Map.Stages.Boosts:GetDescendants()) do
+          if v:IsA("Model") then
+               if v.Parent ~= nil then
+                   if tonumber(v.Parent.Name) == game.Players.LocalPlayer.leaderstats.WORLD.Value then
+                       wait(0.5)
+                      v.PrimaryPart.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+                   end
+              end
+          end
+      end
+   end
+end
